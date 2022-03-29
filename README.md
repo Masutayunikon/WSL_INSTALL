@@ -10,7 +10,7 @@ Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried) \
 
 ## WSL custom
 
-install ohmyposh -> https://ohmyposh.dev/
+install ohmyposh -> https://ohmyposh.dev/ \
 install boxes -> <code>yum install boxes</code> \
 install lolcat -> <code>dnf install lolcat</code> \
 my .bashrc:
