@@ -11,7 +11,7 @@ Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried) \
 ## WSL custom
 
 install ohmyposh -> https://ohmyposh.dev/
-install boxes -> <code>yum install boxes<code>
+install boxes -> <code>yum install boxes</code>
 
 ## Windows custom
 
@@ -21,20 +21,20 @@ set the taskbar disable for mouse activation -> PushToDown file in my repository
 ## Clion
 
 set the template header -> https://www.jetbrains.com/help/idea/using-file-and-code-templates.html \
-<code>
+```c
 /*
 ** EPITECH PROJECT, ${YEAR}
 ** ${FILE_NAME}
 ** File description:
 ** ${PROJECT_NAME} utils function
 */
-<code>
+```
   
-add this part for header files
+add this part for header files \
   
-<code>
+```c
 #[[#ifndef]]# ${NAME}
 #[[#define]]# ${NAME}
 
 #[[#endif]]# //${NAME}
-<code>
+```
