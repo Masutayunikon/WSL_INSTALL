@@ -38,7 +38,7 @@ set the template header -> https://www.jetbrains.com/help/idea/using-file-and-co
 */
 ```
   
-add this part for header files \
+add this part for header files
   
 ```c
 #[[#ifndef]]# ${NAME}
