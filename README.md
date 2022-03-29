@@ -26,7 +26,8 @@ boxes -a c -d dog <<< "Hello $(whoami),today is $(date)" | lolcat
 ## Windows custom
 
 Set the taskbar transparent -> Download TranslucentTB in windows store \
-set the taskbar disable for mouse activation -> PushToDown file in my repository (PushToDown.exe) :warning: **Sometimes glitched but is the best solution i found**:
+:warning: **Sometimes glitched but is the best solution i found for last versions of windows**: \
+set the taskbar disable for mouse activation -> PushToDown file in my repository (PushToDown.exe)
 
 ## Clion
 
