@@ -11,7 +11,15 @@ Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried) \
 ## WSL custom
 
 install ohmyposh -> https://ohmyposh.dev/
-install boxes -> <code>yum install boxes</code>
+install boxes -> <code>yum install boxes</code> \
+install lolcat -> <code>dnf install lolcat</code> \
+my .bashrc:
+```bash
+eval "$(oh-my-posh prompt init bash --config ~/.poshthemes/cert.omp.json)"
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+
+boxes -a c -d dog <<< "Hello $(whoami),today is $(date)" | lolcat
+```
 
 ## Windows custom
 
