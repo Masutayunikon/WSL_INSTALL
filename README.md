@@ -8,7 +8,10 @@ Install fedora34 -> https://dev.to/bowmanjd/install-fedora-on-windows-subsystem-
 The current distro i using -> https://koji.fedoraproject.org/koji/buildinfo?buildID=1920537 \
 Install Epitech dump -> https://github.com/Epitech/dump \
 Install Xserver for GUI in wsl -> https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2 \
-Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)
+Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)\
+Install systemctl and fix error-> https://unix.stackexchange.com/questions/639866/how-to-start-a-service-in-a-wsl-based-fedora \
+Install ssh with openssh and change config file port \
+You can make bridge connection with windows \
 
 ## WSL custom
 
