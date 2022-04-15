@@ -130,9 +130,6 @@ As per @PhyX-Meow
 https://github.com/microsoft/WSL/issues/5548#issuecomment-912495487 \
 https://github.com/microsoft/WSL/issues/5548#issuecomment-990521993
 
-install openssh-server -> https://www.hanselman.com/blog/how-to-ssh-into-wsl2-on-windows-10-from-an-external-machine
-
-
 ## WSL custom
 
 install ohmyposh -> https://ohmyposh.dev/ \
