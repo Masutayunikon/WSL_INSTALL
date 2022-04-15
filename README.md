@@ -7,6 +7,7 @@ Install docker -> https://docs.docker.com/desktop/windows/wsl/ \
 Install fedora34 -> https://dev.to/bowmanjd/install-fedora-on-windows-subsystem-for-linux-wsl-4b26 \
 The current distro i using -> https://koji.fedoraproject.org/koji/buildinfo?buildID=1920537 \
 Install Epitech dump -> https://github.com/Epitech/dump \
+// Maybe useless because he need a good sending packet in connection :/
 Install Xserver for GUI in wsl -> https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2 \
 Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)\
 
