@@ -13,8 +13,72 @@ Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)\
 ## WSL SSH SERVER
 
 Install systemctl and fix error-> https://unix.stackexchange.com/questions/639866/how-to-start-a-service-in-a-wsl-based-fedora \
-Install ssh with openssh and change config file port \
-You can make bridge connection with windows
+Install ssh with openssh and change config file port -> https://www.hanselman.com/blog/how-to-ssh-into-wsl2-on-windows-10-from-an-external-machine \
+You can make bridge connection with windows \
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=OPENVPN_WSL_PORT connectaddress=WSL_IP connectport=WINDOWS_PORT \
+netsh advfirewall firewall add rule name="NAME" dir=in action=allow protocol=TCP localport=WINDOWS_PORT \
+
+Powershell script for auto find in internet
+
+```powershell
+# Start SSH Service.
+wsl sudo service ssh start
+
+# WSL2 network port forwarding script v1
+#   for enable script, 'Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser' in Powershell,
+#   for delete exist rules and ports use 'delete' as parameter, for show ports use 'list' as parameter.
+#   written by Daehyuk Ahn, Aug-1-2020
+
+# Display all portproxy information
+If ($Args[0] -eq "list") {
+    netsh interface portproxy show v4tov4;
+    exit;
+} 
+
+# If elevation needed, start new process
+If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
+{
+  # Relaunch as an elevated process:
+  Start-Process powershell.exe "-File",('"{0}"' -f $MyInvocation.MyCommand.Path),"$Args runas" -Verb RunAs
+  exit
+}
+
+# You should modify '$Ports' for your applications 
+$Ports = (2222,80,443,8080)
+
+# Check WSL ip address
+wsl hostname -I | Set-Variable -Name "WSL"
+$found = $WSL -match '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}';
+if (-not $found) {
+  echo "WSL2 cannot be found. Terminate script.";
+  exit;
+}
+
+# Remove and Create NetFireWallRule
+Remove-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock';
+if ($Args[0] -ne "delete") {
+  New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Outbound -LocalPort $Ports -Action Allow -Protocol TCP;
+  New-NetFireWallRule -DisplayName 'WSL 2 Firewall Unlock' -Direction Inbound -LocalPort $Ports -Action Allow -Protocol TCP;
+}
+
+# Add each port into portproxy
+$Addr = "0.0.0.0"
+Foreach ($Port in $Ports) {
+    iex "netsh interface portproxy delete v4tov4 listenaddress=$Addr listenport=$Port | Out-Null";
+    if ($Args[0] -ne "delete") {
+        iex "netsh interface portproxy add v4tov4 listenaddress=$Addr listenport=$Port connectaddress=$WSL connectport=$Port | Out-Null";
+    }
+}
+
+# Display all portproxy information
+netsh interface portproxy show v4tov4;
+
+# Give user to chance to see above list when relaunched start
+If ($Args[0] -eq "runas" -Or $Args[1] -eq "runas") {
+  Write-Host -NoNewLine 'Press any key to close! ';
+  $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
+}
+```
 
 endless point fix
 
