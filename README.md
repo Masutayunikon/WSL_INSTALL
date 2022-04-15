@@ -9,6 +9,9 @@ The current distro i using -> https://koji.fedoraproject.org/koji/buildinfo?buil
 Install Epitech dump -> https://github.com/Epitech/dump \
 Install Xserver for GUI in wsl -> https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2 \
 Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)\
+
+## WSL SSH SERVER
+
 Install systemctl and fix error-> https://unix.stackexchange.com/questions/639866/how-to-start-a-service-in-a-wsl-based-fedora \
 Install ssh with openssh and change config file port \
 You can make bridge connection with windows \
