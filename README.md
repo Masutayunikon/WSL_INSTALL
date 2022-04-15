@@ -109,3 +109,5 @@ add this part for header files
 
 #[[#endif]]# //${NAME}
 ```
+
+change newline settings for linux new line if you need \
