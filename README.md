@@ -13,7 +13,7 @@ Install PulseAudioServer for wsl sound -> //TODO (Did not work when I tried)\
 ## WSL SSH SERVER
 
 Install systemctl and fix error-> https://unix.stackexchange.com/questions/639866/how-to-start-a-service-in-a-wsl-based-fedora \
-Install ssh with openssh and change config file port
+Install ssh with openssh and change config file port \
 You can make bridge connection with windows
 
 endless point fix
@@ -63,7 +63,7 @@ As per @PhyX-Meow
 :)
 ```
 
-https://github.com/microsoft/WSL/issues/5548#issuecomment-912495487
+https://github.com/microsoft/WSL/issues/5548#issuecomment-912495487 \
 https://github.com/microsoft/WSL/issues/5548#issuecomment-990521993
 
 install openssh-server -> https://www.hanselman.com/blog/how-to-ssh-into-wsl2-on-windows-10-from-an-external-machine
