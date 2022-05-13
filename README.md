@@ -1,4 +1,4 @@
-# My_own_Windows_installation_with_WSL (10 and 11)
+# My own Windows installation with WSL 2 (10 and 11)
 
 ## WSL
 
